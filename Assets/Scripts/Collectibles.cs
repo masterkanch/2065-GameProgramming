@@ -7,6 +7,7 @@ public class Collectibles : MonoBehaviour
     [SerializeField] private CollectibleSpawner collectibleSpawner;
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private SoCollectibles collectibleObject;
+    [SerializeField] private ParticleSystem SpawnCollectible;
   
     
     private CollectibleType _collectibleType;
@@ -35,5 +36,9 @@ public class Collectibles : MonoBehaviour
         spriteRenderer.sprite = collectibleObject.GetSprite();
         _collectibleType = collectibleObject.GetCollectibleType();
         _isRespawnable = collectibleObject.GetRespawnable();
+    }
+
+    private void OnTriggerEnter2D(Collider2D col){
+        SpawnCollectible.Play();
     }
 }

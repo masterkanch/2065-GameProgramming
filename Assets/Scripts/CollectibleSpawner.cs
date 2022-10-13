@@ -10,6 +10,7 @@ public class CollectibleSpawner : MonoBehaviour
     [SerializeField] private Transform tweenEndPoint;
     [SerializeField] private SoAudioClips collectibleRespawn;
     [SerializeField] private AudioSource audioSource;
+    [SerializeField] private ParticleSystem SpawnCollectible;
     
     [Header("Collectible Settings")]
     [SerializeField] private float respawnTime = 4f;
@@ -21,6 +22,7 @@ public class CollectibleSpawner : MonoBehaviour
     private IEnumerator RespawnCollectible()
     {
         yield return new WaitForSeconds(respawnTime);
+        SpawnCollectible.Play();
         SetOutlineSpriteActive(false);
         collectibleGameObject.SetActive(true);
         audioSource.PlayOneShot(collectibleRespawn.GetAudioClip());
@@ -41,4 +43,6 @@ public class CollectibleSpawner : MonoBehaviour
         SetOutlineSpriteActive(true);
         StartCoroutine(RespawnCollectible());
     }
+
+    
 }

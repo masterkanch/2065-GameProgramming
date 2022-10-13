@@ -5,6 +5,7 @@ public class FinishLine : MonoBehaviour
     private const string PlayerTag = "Player";
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private SoAudioClips playerWinning;
+    [SerializeField] private ParticleSystem Winning;
 
     private GameManager _gameManager;
     
@@ -20,6 +21,7 @@ public class FinishLine : MonoBehaviour
     {
         if (!col.CompareTag(PlayerTag)) return;
         audioSource.Play();
+        Winning.Play();
         Invoke("LoadNextLevel", audioSource.clip.length);
     }
 

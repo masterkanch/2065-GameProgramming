@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private PlayerAudioController audioController;
     [SerializeField] private SoAudioClips GroundAudio;
     [SerializeField] private AudioSource audioSource;
+    [SerializeField] private ParticleSystem Dust;
     
 
     [Header("Player Values")] 
@@ -63,7 +64,7 @@ public class PlayerController : MonoBehaviour
         rb.velocity = new Vector2(_moveInput * movementSpeed, rb.velocity.y);
     }
 
-    private void FlipPlayerSprite()
+    private void FlipPlayerSprite() //!Flip player
     {
         player.localScale = _moveInput switch
         {
@@ -71,6 +72,7 @@ public class PlayerController : MonoBehaviour
             < 0f => new Vector3(-1, 1, 1),
             _ => player.localScale
         };
+        CreateDust();
     }
     
     private void TryJumping()
@@ -147,6 +149,10 @@ public class PlayerController : MonoBehaviour
     
     private void PlayerDeath(){
          _gameManager.ProcessPlayerDeath();
+    }
+
+    private void CreateDust(){
+        Dust.Play();
     }
     #endregion
     

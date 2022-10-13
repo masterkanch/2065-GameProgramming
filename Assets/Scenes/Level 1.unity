@@ -934,6 +934,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f49660c92685f4e936584ade0ffa1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!198 &870833367 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5256504158181948376, guid: 6055cfcac19c6461b97d2705032b19dd, type: 3}
+  m_PrefabInstance: {fileID: 6663876219366058425}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &943109062 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5387058802145503954, guid: d2ad6ce1a6a6247c688be5a9f5c18d62, type: 3}
@@ -1660,6 +1665,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7580316584171829998, guid: 1688c7a5dcceac54eb2cfddede3a1be7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1688c7a5dcceac54eb2cfddede3a1be7, type: 3}
 --- !u!1001 &3799050606536246814
@@ -1965,10 +1974,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1633634855}
     m_Modifications:
+    - target: {fileID: 46552733899240871, guid: c490658654f0f434ab765746ac72c910, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 46552733899240871, guid: c490658654f0f434ab765746ac72c910, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 46552733899240871, guid: c490658654f0f434ab765746ac72c910, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1172508017202837038, guid: c490658654f0f434ab765746ac72c910, type: 3}
       propertyPath: deathAudioClips
       value: 
       objectReference: {fileID: 11400000, guid: 34a630d6b3ada46388ad77b506aeb742, type: 2}
+    - target: {fileID: 7993160760533752921, guid: c490658654f0f434ab765746ac72c910, type: 3}
+      propertyPath: moveWithTransform
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7993160760533752921, guid: c490658654f0f434ab765746ac72c910, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7993160760533752921, guid: c490658654f0f434ab765746ac72c910, type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7993160760533752921, guid: c490658654f0f434ab765746ac72c910, type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.minScalar
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 8807623583782796292, guid: c490658654f0f434ab765746ac72c910, type: 3}
       propertyPath: m_Name
       value: Player
@@ -2021,6 +2058,10 @@ PrefabInstance:
       propertyPath: GroundAudio
       value: 
       objectReference: {fileID: 11400000, guid: e241ecba5eea545b18f9f643592c5da4, type: 2}
+    - target: {fileID: 8807623583782796307, guid: c490658654f0f434ab765746ac72c910, type: 3}
+      propertyPath: SpawnCollectible
+      value: 
+      objectReference: {fileID: 870833367}
     - target: {fileID: 8807623584165039417, guid: c490658654f0f434ab765746ac72c910, type: 3}
       propertyPath: GroundAudio
       value: 

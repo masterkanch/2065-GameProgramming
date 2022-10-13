@@ -6,6 +6,9 @@ public class PlayerCollision : MonoBehaviour
     [SerializeField] private SoAudioClips playerPowerUP;
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private SoAudioClips GroundAudio;
+    [SerializeField] private ParticleSystem DustWhenFall;
+    [SerializeField] private ParticleSystem DeathParticle;
+
 
     private Collider2D _playerCollider;
     private void Start()
@@ -35,12 +38,14 @@ public class PlayerCollision : MonoBehaviour
                 default:
                     break;
             }
+            //SpawnCollectible.Play();
             audioSource.PlayOneShot(playerPowerUP.GetAudioClip());
             Debug.Log(collectibleType);
         }
 
         if (_playerCollider.IsTouchingLayers(LayerMask.GetMask("Hazard")))
         {
+            DeathParticle.Play();
             playerController.TakeDamage();
         }
 
@@ -72,6 +77,7 @@ public class PlayerCollision : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D col){
         if(_playerCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))){
             audioSource.PlayOneShot(GroundAudio.GetAudioClip());
+            DustWhenFall.Play();
         }
     }
 }
